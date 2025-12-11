@@ -1,3 +1,3 @@
-NAME = klib
+override NAME = klib
 SRCS = $(shell find src/ -name "*.c")
 include $(AM_HOME)/Makefile.lib

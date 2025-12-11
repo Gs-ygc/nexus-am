@@ -39,7 +39,7 @@ void *malloc(size_t size) {
   lock(&malloc_lock);
   if (last.ptr == NULL) {
     last.ptr = _heap.start;
-    printf("heap start = %x\n", last.ptr);
+    printf("heap start = 0x%x\n", last.ptr);
   }
 
   // aligning

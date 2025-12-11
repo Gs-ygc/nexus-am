@@ -43,7 +43,6 @@ SECTIONS {
 
   end = .;
   _end = .;
-  _heap_start = ALIGN(0x1000);
-  _pmem_start = pmem_base;
+  _heap_start = ALIGN(0x1000); _pmem_start = pmem_base;
   _pmem_end = _pmem_start + LENGTH(ram);
 }

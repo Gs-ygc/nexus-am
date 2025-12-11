@@ -1,4 +1,4 @@
-NAME := am
+override NAME := am
 LIBS := klib
 SRCS = $(addprefix src/, $(AM_SRCS))
 
