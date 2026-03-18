@@ -4,7 +4,11 @@
 
 extern char _heap_start;
 extern char _pmem_end;
+#ifdef __clang__
+int main(void);
+#else
 int main(const char *args);
+#endif
 void __am_init_uartlite(void);
 void __am_uartlite_putchar(char ch);
 void __am_init_16550(void);
@@ -39,7 +43,11 @@ void _trm_init() {
 #else
   __am_init_uartlite();
 #endif
+#ifdef __clang__
+  int ret = main();
+#else
   extern const char __am_mainargs;
   int ret = main(&__am_mainargs);
+#endif
   _halt(ret);
 }
